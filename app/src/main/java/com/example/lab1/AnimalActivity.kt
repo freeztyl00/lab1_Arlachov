@@ -1,10 +1,11 @@
 package com.example.lab1
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
+
+
 
 class AnimalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,13 +13,14 @@ class AnimalActivity : AppCompatActivity() {
         setContentView(R.layout.activity_animal)
         showInfo()
     }
-    val Name = intent.getStringExtra("name")
-    val About = intent.getStringExtra("about")
+
     fun showInfo()
     {
+        val name = intent.getStringExtra("name")
+        val about = intent.getStringExtra("about")
         val showName = findViewById<TextView>(R.id.textName)
-        showName.text = Name
+        showName.text = name
         val showAbout = findViewById<TextView>(R.id.textAbout)
-        showAbout.text = About
+        showAbout.text = about
     }
 }
