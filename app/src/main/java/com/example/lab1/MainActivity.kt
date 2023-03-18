@@ -7,7 +7,7 @@ import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
-    val Cat = Animal("Абоба", "Я звичайна домашня кішка, я люблю гратися.")
+    val Cat = Animal("Абоба", "Я звичайна домашня кішка, яка полюбляє гратися.")
     val Monkey = Animal("Давід", "Я іграшка у вигляді мавпочки.")
     val Hamster = Animal("Доктор Ватсон", "Я джунгарик, який бігає у колесі.")
 
@@ -16,26 +16,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun CatIntent(view: View)
-    {
-        val intent = Intent(this, AnimalActivity::class.java)
-        startActivity(intent)
+    fun CatIntent(view: View) {
+        val secondActivity = Intent(this, AnimalActivity::class.java)
+        startActivity(secondActivity)
         intent.putExtra("name", Cat.name)
         intent.putExtra("about", Cat.about)
     }
 
-    fun MonkeyIntent(view: View)
-    {
-        val intent = Intent(this, AnimalActivity::class.java)
-        startActivity(intent)
+    fun MonkeyIntent(view: View) {
+        startActivity(Intent(this, AnimalActivity::class.java))
         intent.putExtra("name", Monkey.name)
         intent.putExtra("about", Monkey.about)
     }
 
-    fun HamsterIntent(view: View)
-    {
-        val intent = Intent(this, AnimalActivity::class.java)
-        startActivity(intent)
+    fun HamsterIntent(view: View) {
+        startActivity(Intent(this, AnimalActivity::class.java))
         intent.putExtra("name", Hamster.name)
         intent.putExtra("about", Hamster.about)
     }
